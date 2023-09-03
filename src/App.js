@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {
+  MDBInput,
+  MDBCol,
+  MDBRow,
+  MDBCheckbox,
+  MDBBtn,
+  MDBIcon
+} from 'mdb-react-ui-kit';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <form>
+      <MDBInput className='mb-4' type='email' id='form2Example1' label='Email address' />
+      <MDBInput className='mb-4' type='password' id='form2Example2' label='Password' />
+
+      <MDBRow className='mb-4'>
+        <MDBCol className='d-flex justify-content-center'>
+          <MDBCheckbox id='form2Example3' label='Remember me' defaultChecked />
+        </MDBCol>
+        <MDBCol>
+          <a href='#!'>Forgot password?</a>
+        </MDBCol>
+      </MDBRow>
+
+      <MDBBtn type='submit' className='mb-4' block>
+        Sign in
+      </MDBBtn>
+
+      <div className='text-center'>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Not a member? <a href='#!'>Register</a>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <p>or sign up with:</p>
+
+        <MDBBtn floating color="secondary" className='mx-1'>
+          <MDBIcon fab icon='facebook-f' />
+        </MDBBtn>
+
+        <MDBBtn floating color="secondary" className='mx-1'>
+          <MDBIcon fab icon='google' />
+        </MDBBtn>
+
+        <MDBBtn floating color="secondary" className='mx-1'>
+          <MDBIcon fab icon='twitter' />
+        </MDBBtn>
+
+        <MDBBtn floating color="secondary" className='mx-1'>
+          <MDBIcon fab icon='github' />
+        </MDBBtn>
+      </div>
+    </form>
   );
 }
-
-export default App;
